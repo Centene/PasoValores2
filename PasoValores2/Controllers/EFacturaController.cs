@@ -19,16 +19,18 @@ namespace PasoValores2.Controllers
             SERIE = serie;
             fra.Fecha = FECHAFRA;
             fra.Serie = SERIE;
+            fra.Importe = 0;
+
             return View(fra);
         }
-        //[HttpPost]
-        //public ActionResult Index(string fecha)
-        //{
-        //    EFactura fra = new EFactura();
-        //    fra.Fecha = FECHAFRA;
-        //    fra.Serie = SERIE;
-        //    //fra.Importe = Convert.ToInt32(importe);
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult Index(int? importe)
+        {
+            EFactura fra = new EFactura();
+            fra.Fecha = FECHAFRA;
+            fra.Serie = SERIE;
+            fra.Importe = Convert.ToInt32(importe);
+            return View();
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Web;
 
 namespace PasoValores2.Models
 {
+    #region EFactura
     public class EFactura
     {
         [DataType(DataType.Date)]
@@ -15,4 +16,5 @@ namespace PasoValores2.Models
         public string Serie { get; set; }
         public int Importe { get; set; }
     }
+    #endregion
 }
