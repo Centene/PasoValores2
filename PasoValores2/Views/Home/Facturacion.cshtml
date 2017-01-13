@@ -1,0 +1,35 @@
+﻿@model PasoValores2.Models.EFactura
+
+@{
+    ViewBag.Title = "Facturacion";
+}
+
+<h2>Facturacion</h2>
+@using (Html.BeginForm())
+{
+    <text>
+        <p>
+            @Html.RadioButtonFor(m => m.Serie, "CD", new { @checked = "checked" })@Html.Label("CD")
+        </p>
+
+
+        <p>
+            @Html.RadioButtonFor(m => m.Serie, "TEA")@Html.Label("TEA")
+        </p>
+
+    </text>
+
+    <p>
+        @{
+            string dia = DateTime.Now.ToShortDateString();
+            var mes = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+        <input type="date" name="fecha" value=@mes>
+
+
+
+
+
+    </p>
+    <input id="Submit1" type="submit" value="Enviar" />
+            }
